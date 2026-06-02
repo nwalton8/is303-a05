@@ -93,8 +93,7 @@ while True:
             
     elif choice == '5':
         print("Displaying the playlist:")
-        for song in playlist.songs:
-            print(f" - {song}")
+        print(playlist)
     
     elif choice == '6':
         print("Exiting the playlist manager.")
