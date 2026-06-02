@@ -24,7 +24,7 @@ class Song:
         self.artist = artist
         self.duration = duration # doing it in seconds
         
-    def display_info(self):
+    def __str__(self):
         minutes = self.duration // 60
         seconds = self.duration % 60
         return f"{self.title} by {self.artist} - {minutes}:{seconds:02d}"
@@ -46,6 +46,9 @@ class Playlist:
         if not self.songs:
             return None
         return max(self.songs, key=lambda song: song.duration)
+    
+    def __str__(self):
+        return "\n".join(str(song) for song in self.songs)
 
 # Main program
 
@@ -91,7 +94,7 @@ while True:
     elif choice == '5':
         print("Displaying the playlist:")
         for song in playlist.songs:
-            print(f" - {song.display_info()}")
+            print(f" - {song}")
     
     elif choice == '6':
         print("Exiting the playlist manager.")
