@@ -1,0 +1,161 @@
+{
+  "assignment": "A05",
+  "description": "Modeling the World (OOP)",
+  "total_points": 80,
+  "problem_naming": {
+    "Task Manager": ["task_manager.py", "taskmanager.py", "task.py", "tasks.py", "task_list.py"],
+    "Playlist": ["playlist.py", "music.py", "songs.py", "song.py", "music_playlist.py"],
+    "Inventory Tracker": ["inventory_tracker.py", "inventory.py", "inventorytracker.py", "product.py", "products.py"],
+    "Grade Book": ["grade_book.py", "gradebook.py", "grades.py", "grade.py", "assignments.py"],
+    "Workout Log": ["workout_log.py", "workout.py", "workoutlog.py", "fitness.py", "fitness_tracker.py"],
+    "Recipe Book": ["recipe_book.py", "recipebook.py", "recipe.py", "recipes.py", "cookbook.py"],
+    "Contact List": ["contact_list.py", "contactlist.py", "contact.py", "contacts.py", "address_book.py"],
+    "Event Planner": ["event_planner.py", "eventplanner.py", "event.py", "events.py", "calendar.py", "planner.py"]
+  },
+  "problem_rubrics": {
+    "Task Manager": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": ["'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''", "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""],
+          "points": 3
+        },
+        { "field": "class definitions (need 2+)", "regexes": ["\\bclass\\s+\\w+"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 class definitions found. This assignment requires at least two classes." },
+        { "field": "__init__ methods (need 2+)", "regexes": ["def\\s+__init__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __init__ methods found. Each class needs an __init__." },
+        { "field": "__str__ methods (need 2+)", "regexes": ["def\\s+__str__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __str__ methods found. Each class needs a __str__ method that returns a string." },
+        { "field": "composition (list of objects)", "regexes": ["self\\.\\w+\\s*=\\s*\\[", "\\.append\\("], "points": 0, "warn_only": true, "warn_message": "No list attribute or .append() found. Composition requires one class to hold a list of the other." },
+        { "field": "__str__ uses return", "regexes": ["def\\s+__str__[\\s\\S]*?return\\s+"], "points": 0, "warn_only": true, "warn_message": "No 'return' found inside __str__. Remember: __str__ must return a string, not print one." }
+      ],
+      "test_cases": [
+        { "label": "add items and display", "inputs": "Buy groceries\nhigh\nFinish homework\nmedium\ndone\n", "expected_output": "(?i)(task|groceries|homework|complete|list|priority)", "points": 4, "type": "output_check" },
+        { "label": "runs without crash", "inputs": "Test task\nlow\ndone\n", "expected_output": ".+", "points": 4, "type": "output_check" }
+      ]
+    },
+    "Playlist": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": ["'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''", "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""],
+          "points": 3
+        },
+        { "field": "class definitions (need 2+)", "regexes": ["\\bclass\\s+\\w+"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 class definitions found." },
+        { "field": "__init__ methods (need 2+)", "regexes": ["def\\s+__init__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __init__ methods found." },
+        { "field": "__str__ methods (need 2+)", "regexes": ["def\\s+__str__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __str__ methods found." },
+        { "field": "composition (list of objects)", "regexes": ["self\\.\\w+\\s*=\\s*\\[", "\\.append\\("], "points": 0, "warn_only": true, "warn_message": "No list attribute or .append() found." },
+        { "field": "__str__ uses return", "regexes": ["def\\s+__str__[\\s\\S]*?return\\s+"], "points": 0, "warn_only": true, "warn_message": "No 'return' found inside __str__." }
+      ],
+      "test_cases": [
+        { "label": "add songs and display", "inputs": "Bohemian Rhapsody\nQueen\n355\nImagine\nJohn Lennon\n183\ndone\n", "expected_output": "(?i)(song|playlist|bohemian|imagine|duration|total)", "points": 4, "type": "output_check" },
+        { "label": "runs without crash", "inputs": "Test Song\nArtist\n200\ndone\n", "expected_output": ".+", "points": 4, "type": "output_check" }
+      ]
+    },
+    "Inventory Tracker": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": ["'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''", "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""],
+          "points": 3
+        },
+        { "field": "class definitions (need 2+)", "regexes": ["\\bclass\\s+\\w+"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 class definitions found." },
+        { "field": "__init__ methods (need 2+)", "regexes": ["def\\s+__init__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __init__ methods found." },
+        { "field": "__str__ methods (need 2+)", "regexes": ["def\\s+__str__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __str__ methods found." },
+        { "field": "composition (list of objects)", "regexes": ["self\\.\\w+\\s*=\\s*\\[", "\\.append\\("], "points": 0, "warn_only": true, "warn_message": "No list attribute or .append() found." },
+        { "field": "__str__ uses return", "regexes": ["def\\s+__str__[\\s\\S]*?return\\s+"], "points": 0, "warn_only": true, "warn_message": "No 'return' found inside __str__." }
+      ],
+      "test_cases": [
+        { "label": "add products and display", "inputs": "Widget\n9.99\n50\nGadget\n24.99\n30\ndone\n", "expected_output": "(?i)(product|inventory|widget|gadget|stock|value|total)", "points": 4, "type": "output_check" },
+        { "label": "runs without crash", "inputs": "TestItem\n5.00\n10\ndone\n", "expected_output": ".+", "points": 4, "type": "output_check" }
+      ]
+    },
+    "Grade Book": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": ["'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''", "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""],
+          "points": 3
+        },
+        { "field": "class definitions (need 2+)", "regexes": ["\\bclass\\s+\\w+"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 class definitions found." },
+        { "field": "__init__ methods (need 2+)", "regexes": ["def\\s+__init__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __init__ methods found." },
+        { "field": "__str__ methods (need 2+)", "regexes": ["def\\s+__str__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __str__ methods found." },
+        { "field": "composition (list of objects)", "regexes": ["self\\.\\w+\\s*=\\s*\\[", "\\.append\\("], "points": 0, "warn_only": true, "warn_message": "No list attribute or .append() found." },
+        { "field": "__str__ uses return", "regexes": ["def\\s+__str__[\\s\\S]*?return\\s+"], "points": 0, "warn_only": true, "warn_message": "No 'return' found inside __str__." }
+      ],
+      "test_cases": [
+        { "label": "add assignments and display", "inputs": "Midterm\n88\n100\nHomework 1\n45\n50\ndone\n", "expected_output": "(?i)(assignment|grade|average|midterm|homework|score)", "points": 4, "type": "output_check" },
+        { "label": "runs without crash", "inputs": "Quiz 1\n90\n100\ndone\n", "expected_output": ".+", "points": 4, "type": "output_check" }
+      ]
+    },
+    "Workout Log": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": ["'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''", "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""],
+          "points": 3
+        },
+        { "field": "class definitions (need 2+)", "regexes": ["\\bclass\\s+\\w+"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 class definitions found." },
+        { "field": "__init__ methods (need 2+)", "regexes": ["def\\s+__init__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __init__ methods found." },
+        { "field": "__str__ methods (need 2+)", "regexes": ["def\\s+__str__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __str__ methods found." },
+        { "field": "composition (list of objects)", "regexes": ["self\\.\\w+\\s*=\\s*\\[", "\\.append\\("], "points": 0, "warn_only": true, "warn_message": "No list attribute or .append() found." },
+        { "field": "__str__ uses return", "regexes": ["def\\s+__str__[\\s\\S]*?return\\s+"], "points": 0, "warn_only": true, "warn_message": "No 'return' found inside __str__." }
+      ],
+      "test_cases": [
+        { "label": "log workouts and display", "inputs": "Running\n30\n300\nPush-ups\n15\n100\ndone\n", "expected_output": "(?i)(workout|running|push|calorie|total|log|exercise)", "points": 4, "type": "output_check" },
+        { "label": "runs without crash", "inputs": "Walking\n20\n150\ndone\n", "expected_output": ".+", "points": 4, "type": "output_check" }
+      ]
+    },
+    "Recipe Book": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": ["'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''", "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""],
+          "points": 3
+        },
+        { "field": "class definitions (need 2+)", "regexes": ["\\bclass\\s+\\w+"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 class definitions found." },
+        { "field": "__init__ methods (need 2+)", "regexes": ["def\\s+__init__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __init__ methods found." },
+        { "field": "__str__ methods (need 2+)", "regexes": ["def\\s+__str__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __str__ methods found." },
+        { "field": "composition (list of objects)", "regexes": ["self\\.\\w+\\s*=\\s*\\[", "\\.append\\("], "points": 0, "warn_only": true, "warn_message": "No list attribute or .append() found." },
+        { "field": "__str__ uses return", "regexes": ["def\\s+__str__[\\s\\S]*?return\\s+"], "points": 0, "warn_only": true, "warn_message": "No 'return' found inside __str__." }
+      ],
+      "test_cases": [
+        { "label": "add recipes and display", "inputs": "Pancakes\nBreakfast\n15\nflour, eggs, milk\nSpaghetti\nDinner\n30\npasta, sauce, garlic\ndone\n", "expected_output": "(?i)(recipe|pancake|spaghetti|ingredient|category|cook)", "points": 4, "type": "output_check" },
+        { "label": "runs without crash", "inputs": "Toast\nBreakfast\n5\nbread, butter\ndone\n", "expected_output": ".+", "points": 4, "type": "output_check" }
+      ]
+    },
+    "Contact List": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": ["'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''", "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""],
+          "points": 3
+        },
+        { "field": "class definitions (need 2+)", "regexes": ["\\bclass\\s+\\w+"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 class definitions found." },
+        { "field": "__init__ methods (need 2+)", "regexes": ["def\\s+__init__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __init__ methods found." },
+        { "field": "__str__ methods (need 2+)", "regexes": ["def\\s+__str__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __str__ methods found." },
+        { "field": "composition (list of objects)", "regexes": ["self\\.\\w+\\s*=\\s*\\[", "\\.append\\("], "points": 0, "warn_only": true, "warn_message": "No list attribute or .append() found." },
+        { "field": "__str__ uses return", "regexes": ["def\\s+__str__[\\s\\S]*?return\\s+"], "points": 0, "warn_only": true, "warn_message": "No 'return' found inside __str__." }
+      ],
+      "test_cases": [
+        { "label": "add contacts and display", "inputs": "Alice Smith\n555-1234\nalice@email.com\nBob Jones\n555-5678\nbob@email.com\ndone\n", "expected_output": "(?i)(contact|alice|bob|phone|email|list|address)", "points": 4, "type": "output_check" },
+        { "label": "runs without crash", "inputs": "Test Person\n555-0000\ntest@test.com\ndone\n", "expected_output": ".+", "points": 4, "type": "output_check" }
+      ]
+    },
+    "Event Planner": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": ["'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''", "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""],
+          "points": 3
+        },
+        { "field": "class definitions (need 2+)", "regexes": ["\\bclass\\s+\\w+"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 class definitions found." },
+        { "field": "__init__ methods (need 2+)", "regexes": ["def\\s+__init__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __init__ methods found." },
+        { "field": "__str__ methods (need 2+)", "regexes": ["def\\s+__str__\\s*\\(\\s*self"], "min_count": 2, "points": 0, "warn_only": true, "warn_message": "Fewer than 2 __str__ methods found." },
+        { "field": "composition (list of objects)", "regexes": ["self\\.\\w+\\s*=\\s*\\[", "\\.append\\("], "points": 0, "warn_only": true, "warn_message": "No list attribute or .append() found." },
+        { "field": "__str__ uses return", "regexes": ["def\\s+__str__[\\s\\S]*?return\\s+"], "points": 0, "warn_only": true, "warn_message": "No 'return' found inside __str__." }
+      ],
+      "test_cases": [
+        { "label": "add events and display", "inputs": "Birthday Party\n2025-06-15\nPark\nTeam Meeting\n2025-06-20\nOffice\ndone\n", "expected_output": "(?i)(event|birthday|meeting|date|location|calendar)", "points": 4, "type": "output_check" },
+        { "label": "runs without crash", "inputs": "Test Event\n2025-07-01\nHome\ndone\n", "expected_output": ".+", "points": 4, "type": "output_check" }
+      ]
+    }
+  }
+}
